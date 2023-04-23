@@ -1,0 +1,205 @@
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background: #231F20;
+}
+
+/* ЗАГОЛОВОК */
+.header_title {
+  width: 90%;
+  justify-content: center;
+  margin-top: 2vh;
+  height: 10vh;
+  display: flex;
+  color: #fff;
+  font-size: 6vh;
+  border-bottom: 0.5vh solid rgb(255, 255, 255);
+}
+
+/* КОНТЕЙНЕР с карточками */
+.container {
+  width: 90%;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* КАРТОЧКИ */
+.column{
+  margin: 1vh;
+  width: 20%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  border-radius: 1vh;
+  border: 1vh solid;
+  border-image-slice: 1;
+  border-width: 0.5vh;
+  padding: 1%;
+}
+.column:hover {
+  border-image-source: linear-gradient(
+    45deg,
+    #ff0000,
+    #00ffd5,
+    #7a00ff,
+    #ff00c8
+  );
+  background-size: 400%;
+  border-radius: 0.1vh;
+}
+.column h1{
+  margin: 0 0 1vh 0;
+  font-size: calc(10px + (10 + 10 * 0.7) * ((100vw - 320px) / 1280));
+  padding-bottom: 1vh;
+  border-bottom: 0.5vh solid rgb(255, 255, 255);
+}
+
+/* СТИКЕР */
+.text_block {
+  margin: 5%;
+  padding: 1vh;
+  height: auto;
+  font-size: calc(6px + (6 + 6 * 0.7) * ((100vw - 320px) / 1280));
+  border-radius: 1vh;
+  border: 0.25vh solid rgb(255, 255, 255);
+}
+
+/* СЕКЦИЯ со стикерами */
+#col1,#col2,#col3,#col4 {
+  width: 100%;
+  height: 100%;
+  padding: 1%;
+}
+.section {
+  width: 100%;
+  overflow: auto;
+}
+.section::-webkit-scrollbar {
+  width: 2vh;               /* ширина scrollbar */
+}
+@media (max-width:1280px) {
+  .section::-webkit-scrollbar {
+    width: 1vh;               /* ширина scrollbar */
+  }
+}
+.section::-webkit-scrollbar-thumb {   /* цвет плашки */
+  border-radius: 2vh;       /* закругления плашки */
+  border: 0.25vh solid rgb(255, 255, 255);  /* padding вокруг плашки */
+}
+
+/* КНОПКА */
+.small_screen_btn {
+  display: none;
+}
+.bn5 {
+  position: absolute;
+  top: 75%;
+  outline: none;
+  z-index: 0;
+  width: 20%;
+  height: 5%;
+  padding: 1% 0% 1.5% 0.5%;
+  cursor: pointer;
+  font-size: 4vh;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background: #111;
+  border-radius: 2vh;
+  border: 0.5vh solid white;
+}
+@media (max-width:1280px) {
+  .bn5 {
+    display: none;
+  }
+  .small_screen_btn {
+    display:block;
+  }
+}
+.bn5:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowingbn5 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 1vh;
+}
+@keyframes glowingbn5 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.bn5:active{
+  color: #fff;
+}
+.bn5:active:after {
+  background: transparent;
+}
+.bn5:hover:before{
+  opacity: 1;
+}
+.bn5:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #191919;
+  left: 0;
+  top: 0;
+  border-radius: 1vh;
+}
+
+/* ПОДВАЛ */
+footer {
+  width: 90%;
+  height: 5vh;
+  bottom: 4.5vh;
+  position: absolute;
+  padding: 0vh 1vh;
+  border-top: 0.5vh solid rgb(255, 255, 255);
+}
+.footer_link {
+	text-decoration: underline;
+  color: #fff;
+}
+.footer_link:hover {
+	text-decoration: underline;
+	color: #CE9FFC;
+	transition: 0.5ms;
+}
+.footer_text {
+  font-size: 2.5vh;
+  color: #fff;
+}
