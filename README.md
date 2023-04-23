@@ -7,4 +7,4 @@ Features of this version:
 * More adaptive.
 * More beautiful🥰.
 
-* P.S. Removal is also a double click, if anything. *
+*P.S. Removal is also a double click, if anything.*
